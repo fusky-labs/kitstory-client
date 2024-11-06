@@ -1,5 +1,5 @@
 import { writable } from "svelte/store"
-import type { CharacterItem, PlotCell } from "./types";
+import type { CharacterItem, PlotBlock } from "./types";
 
 const arrayWritable = <Data = unknown>() => {
   const { subscribe, update, set } = writable<Data[]>([])
@@ -23,8 +23,8 @@ export const addCharacter = (...definitions: CharacterItem[]) => {
 }
 
 //* $plotStore
-export const plotStore = arrayWritable<PlotCell>();
-export const recentlyDeletedPlotStore = arrayWritable<PlotCell>();
+export const plotStore = arrayWritable<PlotBlock>();
+export const recentlyDeletedPlotStore = arrayWritable<PlotBlock>();
 
 export const spawnDialogCell = () => {
   // TODO check the $characterStore for any set defaults, then append them on $.data.character
