@@ -39,7 +39,11 @@ interface SectionBlock extends BaseAttributes {
   }
 }
 
-export type PlotCell = DialogBlock | NarratorBlock | SettingBlock | SectionBlock
+
+type ExtractKeyAsLiterals<K extends keyof any, I> = I extends { [key in K]: infer R } ? R : never;
+
+export type PlotBlock = DialogBlock | NarratorBlock | SettingBlock | SectionBlock
+export type PlotBlockTypes = ExtractKeyAsLiterals<"type", PlotBlock>
 
 
 export interface CharacterItem extends BaseAttributes {

@@ -1,7 +1,9 @@
 <script lang="ts">
+  import type { PlotBlockTypes } from "../types";
+
   interface BlockProps {
     lock?: boolean;
-    type: "narrator" | "dialogue" | "setting" | "section";
+    type: PlotBlockTypes;
   }
 
   let { lock, type }: BlockProps = $props();
