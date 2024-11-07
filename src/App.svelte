@@ -1,10 +1,10 @@
 <script lang="ts">
   import "./app.css";
 
-  import StoryPlotContainer from "./components/StoryPlotContainer.svelte";
+  import { StoryPlotContainer } from "./components";
 </script>
 
-<div class="px-6 py-7">
+<nav>lol</nav>
+<main class="px-6 py-7">
   <StoryPlotContainer />
-  <StoryPlotControls />
-</div>
+</main>
