@@ -1,5 +1,4 @@
-import { cn } from "@ce-internal/config"
-import { cva, type VariantProps } from "class-variance-authority"
+import { cva } from "class-variance-authority"
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary"
@@ -8,11 +7,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export function Button(props: React.PropsWithChildren<ButtonProps>) {
-  const button = cva(["border rounded-md border-red-400", props.className], {
+  const button = cva(["rounded-md", props.className], {
     variants: {
       variant: {
-        primary: "",
-        secondary: "",
+        primary: "border border-red-400",
+        secondary: "hover:bg-red-300",
       },
       size: {
         small: !props.icon ? "px-1.5 py-1" : "p-1.5",
@@ -21,7 +20,7 @@ export function Button(props: React.PropsWithChildren<ButtonProps>) {
     },
   })
 
-  const { icon, ...validProps } = props
+  const { icon, variant, ...validProps } = props
 
   return (
     <button
