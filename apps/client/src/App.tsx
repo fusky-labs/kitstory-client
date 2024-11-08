@@ -1,14 +1,11 @@
-import { BlockRenderer, Button } from "@ce-internal/ui"
-import { useState } from "react"
+import { BlockRenderer, PlotBlock } from "@ce-internal/ui"
 
 export default function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
+    <div className="px-8 mx-auto max-w-screen-xl">
       <BlockRenderer>
-        <Button>Add new block</Button>
+        <PlotBlock type="dialogue" />
       </BlockRenderer>
-    </>
+    </div>
   )
 }
