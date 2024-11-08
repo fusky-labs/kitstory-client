@@ -1,0 +1,1 @@
+export * as twConfig from "./tw-config"
