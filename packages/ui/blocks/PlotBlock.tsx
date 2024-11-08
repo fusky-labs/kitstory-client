@@ -1,7 +1,7 @@
 "use client"
 import { BlockTemplate } from "./BlockTemplate"
-import { useBlockContext } from "./BlockRenderer"
 import { PlotBlockTypes } from "@ce-internal/config"
+import { useBlockContext } from "./PlotBlockContext"
 
 interface PlotBlockProps {
   type: Exclude<PlotBlockTypes, "section">
@@ -19,8 +19,15 @@ export function PlotBlock(props: PlotBlockProps) {
 
   return (
     <BlockTemplate locked={props.locked}>
-      <div>Character dropdown</div>
-      <textarea name="" id="" className="w-full resize-y rounded-md"></textarea>
+      {props.type === "dialogue" ? (
+        <>
+          <div>Character dropdown</div>
+        </>
+      ) : null}
+
+      {props.type === "dialogue" || props.type === "narrator" ? (
+        <textarea className="w-full resize-y rounded-md"></textarea>
+      ) : null}
     </BlockTemplate>
   )
 }

@@ -12,8 +12,8 @@ export function BlockTemplate(
   props: React.PropsWithChildren<BlockTemplateProps>
 ) {
   return (
-    <section className="relative flex p-2.5 rounded-md border border-red-400">
-      <div id="block-actions" className="absolute top-3 -left-16">
+    <section className="flex items-start" id="plot-block-wrapper">
+      <div id="block-actions" className="inline-flex">
         <Button icon>
           <PlusIcon size={17} />
         </Button>
@@ -22,7 +22,9 @@ export function BlockTemplate(
         </Button>
       </div>
       <div id="main-block-content" className="flex-1">
-        {props.children}
+        <div className="p-3 rounded-md border border-red-400">
+          {props.children}
+        </div>
       </div>
     </section>
   )
