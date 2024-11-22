@@ -1,10 +1,11 @@
 <script lang="ts">
   interface Props {
-    comments?: unknown
-    children?: Function
+    comments: unknown
+    children: Function
+    locked: boolean
   }
 
-  let { comments, children }: Props = $props()
+  let { comments, children }: Partial<Props> = $props()
 </script>
 
 <div>
