@@ -8,5 +8,5 @@
 </script>
 
 <BlockTemplate>
-  <textarea name="" id="" class="resize-y"></textarea>
+  <textarea name="" id="" autocapitalize="off" spellcheck={false}></textarea>
 </BlockTemplate>
