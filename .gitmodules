@@ -1,6 +1,0 @@
-[submodule "packages/kuro-utils"]
-	path = packages/kuro-utils
-	url = https://github.com/kuroji-fusky/kuro-utils.git
-[submodule "packages/kuro-ui"]
-	path = packages/kuro-ui
-	url = https://github.com/kuroji-fusky/kuro-ui.git
