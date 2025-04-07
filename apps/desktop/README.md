@@ -1,1 +1,1 @@
-# Crimson Desktop Editor
+# Kitstory Desktop Editor

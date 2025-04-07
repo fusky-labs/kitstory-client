@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    ce_desktop_lib::run()
+    kitstory_desktop_lib::run()
 }

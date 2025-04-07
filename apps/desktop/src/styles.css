@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --font-root: "Inter", var(--default-font-family);
+  --font-root-mono: "Azeret Mono", var(--default-mono-font-family);
+}

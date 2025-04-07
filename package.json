@@ -2,12 +2,12 @@
   "name": "kitstory",
   "private": true,
   "version": "0.0.1",
-  "repository": "https://github.com/kuroji-fusky/kitstory.git",
+  "repository": "https://github.com/fusky-labs/kitstory-client.git",
   "author": "Kerby Keith Aquino <hello@kurojifusky.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "type": "module",
   "scripts": {
-    "dev": "turbo dev --filter=crimson-web-client"
+    "dev": "turbo dev --filter=web"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",

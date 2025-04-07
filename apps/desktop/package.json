@@ -1,30 +1,33 @@
 {
-  "name": "crimson-desktop",
-  "private": true,
+  "name": "@kitstory/desktop",
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "vite dev",
+    "build": "vite build",
     "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "tauri": "tauri"
   },
   "dependencies": {
+    "@fontsource/azeret-mono": "^5.2.6",
+    "@fontsource/inter": "^5.2.5",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.1.2",
     "@tauri-apps/api": "^2",
-    "@tauri-apps/plugin-shell": "^2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "@tauri-apps/plugin-opener": "^2",
+    "tailwindcss": "^4.1.2"
   },
   "devDependencies": {
-    "@kitstory/config": "*",
+    "@sveltejs/adapter-static": "^3.0.6",
+    "@sveltejs/kit": "^2.9.0",
+    "@sveltejs/vite-plugin-svelte": "^5.0.0",
     "@tauri-apps/cli": "^2",
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.2.1",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14",
-    "typescript": "^5.2.2",
-    "vite": "^5.3.1"
+    "svelte": "^5.0.0",
+    "svelte-check": "^4.0.0",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.3"
   }
 }
