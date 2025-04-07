@@ -1,1 +1,0 @@
-# Crimson Editor Web Client

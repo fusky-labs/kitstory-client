@@ -1,0 +1,9 @@
+{
+  "name": "@kitstory/config",
+  "version": "0.0.0",
+  "private": true,
+  "devDependencies": {},
+  "files": [
+    "types.ts"
+  ]
+}

@@ -1,13 +1,12 @@
 import type { Config } from "tailwindcss"
-import { twConfig } from "@ce-internal/config"
+import formsPlugin from "@tailwindcss/forms"
 
 const config: Config = {
   content: [
-    "src/**/*.{ts,tsx}",
-    "index.html",
-    "../../packages/ui/**/*.{ts,tsx}"
+    "./src/**/*.{svelte,ts}",
+    "./index.html",
   ],
-  presets: [twConfig]
+  presets: [formsPlugin]
 }
 
 export default config
