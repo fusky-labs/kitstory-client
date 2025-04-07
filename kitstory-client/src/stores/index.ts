@@ -1,5 +1,5 @@
 import { writable } from "svelte/store"
-import type { CharacterItem, PlotBlock } from "./types";
+import type { CharacterItem, PlotBlock } from "../types";
 
 const arrayWritable = <Data = unknown>() => {
   const { subscribe, update, set } = writable<Data[]>([])
@@ -8,8 +8,7 @@ const arrayWritable = <Data = unknown>() => {
     subscribe,
     update,
     deleteFromIndex: (...indices: number[]) => update((prevData) => {
-      const newArr = prevData.filter((_, index) => !indices.includes(index));
-      return newArr;
+      return prevData.filter((_, index) => !indices.includes(index));
     }),
     clear: () => set([])
   }
@@ -35,7 +34,7 @@ export const spawnDialogCell = () => {
       type: "dialogue",
       data: {
         character: "<set default here>",
-        content: "",
+        textContent: "",
       },
     },
   ]);
@@ -46,9 +45,9 @@ export const spawnNarratorCell = () => {
     ...prevData,
     {
       uuid: crypto.randomUUID(),
-      type: "narrator",
+      type: "meta",
       data: {
-        content: "",
+        textContent: "",
       },
     },
   ]);

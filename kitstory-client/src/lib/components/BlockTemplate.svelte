@@ -21,9 +21,6 @@
   <div class="absolute inset-y-0 left-0 -translate-x-full pr-3">
     <div id="block-detail-indicator" class="flex flex-col items-end gap-y-0.5">
       <span id="block-actions" class="justify-end flex-row !gap-x-1 mb-1.5">
-        <Button icon>
-          <PlusIcon size={21} />
-        </Button>
         <Button icon class="cursor-grab">
           <GripVerticalIcon size={21} />
         </Button>
