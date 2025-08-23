@@ -1,12 +1,18 @@
 <script lang="ts">
-  import type { HTMLButtonAttributes } from "svelte/elements"
-  import { cva } from "class-variance-authority"
+  import type { HTMLButtonAttributes } from "svelte/elements";
+  import { cva } from "class-variance-authority";
+  import type { Snippet } from "svelte";
 
   interface Props extends HTMLButtonAttributes {
-    class: string
-    icon: boolean
-    size: "small" | "big"
-    variant: "primary" | "secondary"
+    children: Snippet;
+
+    leftSlot?: Snippet;
+    rightSlot?: Snippet;
+
+    icon?: Snippet;
+
+    size?: "small" | "big";
+    variant?: "primary" | "secondary";
   }
 
   const {
@@ -15,8 +21,10 @@
     children,
     size,
     variant,
+    leftSlot,
+    rightSlot,
     ...others
-  }: Partial<Props> = $props()
+  }: Props = $props();
 
   const button = cva(["rounded-md", className], {
     variants: {
@@ -29,7 +37,7 @@
         big: !icon ? "px-1.5 py-1" : "p-1",
       },
     },
-  })
+  });
 </script>
 
 <button
@@ -39,5 +47,11 @@
     size: size || "small",
   })}
 >
-  {@render children?.()}
+  {#if leftSlot}
+    {@render leftSlot?.()}
+  {/if}
+  {@render children()}
+  {#if rightSlot}
+    {@render rightSlot?.()}
+  {/if}
 </button>
