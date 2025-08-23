@@ -3,7 +3,7 @@
   import type { HTMLAttributes } from "svelte/elements"
   import type { BlockIndicators } from "./blocks.types"
 
-  let { locked }: Partial<BlockIndicators & HTMLAttributes<HTMLElement>> =
+  const { locked }: Partial<BlockIndicators & HTMLAttributes<HTMLElement>> =
     $props()
 </script>
 

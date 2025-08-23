@@ -1,20 +1,20 @@
 <script lang="ts">
-  import type { HTMLAttributes } from "svelte/elements"
+  import type { HTMLAttributes } from "svelte/elements";
   import {
     MessageSquareIcon as CommentIcon,
     PlusIcon,
     GripVerticalIcon,
     LockIcon,
-  } from "lucide-svelte"
+  } from "lucide-svelte";
 
-  import Button from "./Button.svelte"
-  import type { BlockIndicators } from "./blocks.types"
+  import Button from "./Button.svelte";
+  import type { BlockIndicators } from "./blocks.types";
 
-  let {
+  const {
     comments,
     locked,
     children,
-  }: Partial<BlockIndicators & HTMLAttributes<HTMLElement>> = $props()
+  }: Partial<BlockIndicators & HTMLAttributes<HTMLElement>> = $props();
 </script>
 
 <section class="relative ml-24 min-h-fit" id="plot-block-wrapper">

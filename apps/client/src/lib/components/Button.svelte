@@ -9,7 +9,7 @@
     variant: "primary" | "secondary"
   }
 
-  let {
+  const {
     class: className,
     icon,
     children,
