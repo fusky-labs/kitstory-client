@@ -1,8 +1,7 @@
 <script lang="ts">
+  import type { BlockTypes } from "$lib/types";
   import { GripVerticalIcon } from "@lucide/svelte";
   import type { Snippet } from "svelte";
-
-  type AcceptedBlockTypes = "character" | "narrator" | "cue";
 
   interface Props {
     children: Snippet;
@@ -13,7 +12,7 @@
      */
     uuid?: unknown;
     /** @internal */
-    _blockType: AcceptedBlockTypes;
+    _blockType: BlockTypes;
     blockIndex?: number;
 
     [x: string]: unknown;
