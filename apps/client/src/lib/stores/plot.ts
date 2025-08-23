@@ -1,17 +1,11 @@
-import type { CharacterItem, PlotBlock } from "../types";
+import type { PlotBlock } from "../types";
 import { arrayWritable } from "./arrayWritable";
 
-// characterStore
-export const characterStore = arrayWritable<CharacterItem>();
-
-export const addCharacter = (...definitions: CharacterItem[]) => {
-  characterStore.update((prevData) => ([...prevData, ...definitions]))
-}
-
 // plotStore
-export const plotStore = arrayWritable<PlotBlock>();
 export const recentlyDeletedPlotStore = arrayWritable<PlotBlock>();
-export const historyStore = arrayWritable();
+
+// Probably turn these into class
+export const plotStore = arrayWritable<PlotBlock>();
 
 export const spawnCharacterCell = () => {
   // TODO check the $characterStore for any set defaults, then append them on $.data.character
