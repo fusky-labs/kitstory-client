@@ -1,6 +1,7 @@
 <script lang="ts">
+  import { Button } from "@kitstory/ui";
 </script>
 
 <main class="container">
-  <p>yung pera aging bato pa, gagoh</p>
+  <!-- <Button>I'm alive bitches</Button> -->
 </main>

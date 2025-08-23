@@ -12,6 +12,7 @@
   "dependencies": {
     "@fontsource/azeret-mono": "^5.2.6",
     "@fontsource/inter": "^5.2.5",
+    "@lucide/svelte": "^0.540.0",
     "@tailwindcss/vite": "^4.1.2",
     "@tauri-apps/api": "^2",
     "@tauri-apps/plugin-opener": "^2",
