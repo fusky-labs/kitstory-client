@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Footer, Navbar } from "$lib/components";
+	import Navbar from "$lib/components/Navbar.svelte";
 	import { onMount } from "svelte";
 	import "../app.css";
 

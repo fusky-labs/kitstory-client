@@ -7,10 +7,12 @@
   "license": "Apache-2.0",
   "type": "module",
   "scripts": {
-    "dev": "turbo dev --filter=web"
+    "preinstall": "npx only-allow",
+    "dev": "pnpm --filter=@fusky-labs/kitstory-web dev"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "only-allow": "1.2.1",
     "typescript": "~5"
   }
 }

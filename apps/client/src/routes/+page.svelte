@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Meta } from "$lib/components";
+  import Meta from "$lib/components/Meta.svelte";
   import BlockCharacter from "$lib/components/blocks/BlockCharacter.svelte";
   import Button from "$lib/components/Button.svelte";
   import { ChevronDownIcon } from "@lucide/svelte";
