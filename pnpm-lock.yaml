@@ -45,12 +45,6 @@ importers:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^6
         version: 6.1.3(svelte@5.25.7)(vite@7.1.3(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.7.1))
-      '@tailwindcss/forms':
-        specifier: ^0.5.9
-        version: 0.5.10(tailwindcss@4.1.3)
-      '@tailwindcss/typography':
-        specifier: ^0.5.15
-        version: 0.5.16(tailwindcss@4.1.3)
       '@tailwindcss/vite':
         specifier: ^4
         version: 4.1.3(vite@7.1.3(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.7.1))
@@ -77,10 +71,10 @@ importers:
     dependencies:
       '@fontsource/azeret-mono':
         specifier: ^5.2.6
-        version: 5.2.6
+        version: 5.2.9
       '@fontsource/inter':
         specifier: ^5.2.5
-        version: 5.2.5
+        version: 5.2.6
       '@tailwindcss/vite':
         specifier: ^4.1.2
         version: 4.1.3(vite@6.2.5(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.7.1))
@@ -134,10 +128,23 @@ importers:
   packages/tsconfig: {}
 
   packages/ui:
+    dependencies:
+      '@fontsource/azeret-mono':
+        specifier: ^5.2.9
+        version: 5.2.9
+      '@fontsource/inter':
+        specifier: ^5.2.6
+        version: 5.2.6
     devDependencies:
       '@lucide/svelte':
         specifier: ^0.540.0
         version: 0.540.0(svelte@5.25.7)
+      '@tailwindcss/forms':
+        specifier: ^0.5.9
+        version: 0.5.10(tailwindcss@4.1.3)
+      '@tailwindcss/typography':
+        specifier: ^0.5.15
+        version: 0.5.16(tailwindcss@4.1.3)
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.1
@@ -147,6 +154,9 @@ importers:
       svelte-check:
         specifier: ^4.0.0
         version: 4.1.5(picomatch@4.0.3)(svelte@5.25.7)(typescript@5.8.3)
+      tailwindcss:
+        specifier: ^4
+        version: 4.1.3
 
 packages:
 
@@ -357,14 +367,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fontsource/azeret-mono@5.2.6':
-    resolution: {integrity: sha512-riJFvJzVTVktqBZG5IqtfLfUWVxsdvZteNwdrb2xlbPod6WdNOIorkumCyB4JASNFdKdWVKp2bQqbg1um8teXg==}
-
   '@fontsource/azeret-mono@5.2.9':
     resolution: {integrity: sha512-1qnbVspQPI38qhSTSidWU4bjG5ynWCfkMwfPxahqxejJO/u4yT1FbPqG73s4fDmQSuDQYoA8jfTpoQiod7+fuA==}
-
-  '@fontsource/inter@5.2.5':
-    resolution: {integrity: sha512-kbsPKj0S4p44JdYRFiW78Td8Ge2sBVxi/PIBwmih+RpSXUdvS9nbs1HIiuUSPtRMi14CqLEZ/fbk7dj7vni1Sg==}
 
   '@fontsource/inter@5.2.6':
     resolution: {integrity: sha512-CZs9S1CrjD0jPwsNy9W6j0BhsmRSQrgwlTNkgQXTsAeDRM42LBRLo3eo9gCzfH4GvV7zpyf78Ozfl773826csw==}
@@ -1354,11 +1358,7 @@ snapshots:
   '@esbuild/win32-x64@0.25.2':
     optional: true
 
-  '@fontsource/azeret-mono@5.2.6': {}
-
   '@fontsource/azeret-mono@5.2.9': {}
-
-  '@fontsource/inter@5.2.5': {}
 
   '@fontsource/inter@5.2.6': {}
 

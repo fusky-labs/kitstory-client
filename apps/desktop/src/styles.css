@@ -1,5 +1,1 @@
-@import "@fontsource/inter";
-@import "@fontsource/inter/700";
-@import "tailwindcss";
-
-@source "@kitstory/shared";
+@import "@kitstory/ui/global.css";

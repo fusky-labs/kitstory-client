@@ -6,7 +6,7 @@
     LockOpen,
   } from "@lucide/svelte";
   import BlockBase from "./_BlockBase.svelte";
-  import Button from "../Button.svelte";
+  import Button from "../components/Button.svelte";
 </script>
 
 <BlockBase
