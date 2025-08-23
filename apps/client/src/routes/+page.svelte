@@ -1,7 +1,7 @@
 <script lang="ts">
   import Meta from "$lib/components/Meta.svelte";
-  import BlockCharacter from "$lib/components/blocks/BlockCharacter.svelte";
-  import Button from "$lib/components/Button.svelte";
+  import { BlockCharacter } from "@kitstory/ui/blocks";
+  import { Button } from "@kitstory/ui";
   import { ChevronDownIcon } from "@lucide/svelte";
 </script>
 
@@ -17,7 +17,10 @@
       <BlockCharacter />
       <BlockCharacter />
       <BlockCharacter />
-      <div id="character-selection-shelf" class="flex flex-wrap gap-2 ml-16 px-2">
+      <div
+        id="character-selection-shelf"
+        class="flex flex-wrap gap-2 ml-16 px-2"
+      >
         <Button>
           {#snippet leftSlot()}
             <div class="bg-amber-400 size-5 rounded-full"></div>

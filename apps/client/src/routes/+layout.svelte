@@ -4,6 +4,7 @@
 
 	import interFont from "@fontsource/inter/files/inter-latin-400-normal.woff2?url";
 	import interFont700 from "@fontsource/inter/files/inter-latin-700-normal.woff2?url";
+    import Navbar from "$lib/components/Navbar.svelte";
 
 	const { children } = $props();
 
