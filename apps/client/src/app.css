@@ -1,18 +1,5 @@
-@import "tailwindcss";
-
-@source "@kitstory/ui";
-
 @import "@fontsource/inter";
 @import "@fontsource/inter/700";
+@import "tailwindcss";
 
-@plugin '@tailwindcss/forms';
-@plugin '@tailwindcss/typography';
-
-@custom-variant dark (&:where(html.dark *), @media (prefers-color-scheme:dark));
-
-@theme {
-  --font-body: "Inter",
-  var(--default-font-family);
-  --font-mono: "Azeret Mono",
-  var(--default-mono-font-family);
-}
+@source "@kitstory/shared";

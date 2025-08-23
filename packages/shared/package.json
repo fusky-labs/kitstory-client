@@ -1,9 +1,8 @@
 {
-  "name": "@kitstory/config",
+  "name": "@kitstory/shared",
   "version": "0.0.0",
   "private": true,
-  "devDependencies": {},
-  "files": [
-    "types.ts"
-  ]
+  "devDependencies": {
+    "typescript": "^5"
+  }
 }
