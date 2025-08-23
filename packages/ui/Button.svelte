@@ -1,7 +1,7 @@
 <script lang="ts">
+  import type { Snippet } from "svelte";
   import type { HTMLButtonAttributes } from "svelte/elements";
   import { cva } from "class-variance-authority";
-  import type { Snippet } from "svelte";
 
   interface Props extends HTMLButtonAttributes {
     children: Snippet;
@@ -26,18 +26,21 @@
     ...others
   }: Props = $props();
 
-  const button = cva(["rounded-md", className], {
-    variants: {
-      variant: {
-        primary: "border border-red-400",
-        secondary: "hover:bg-red-300",
-      },
-      size: {
-        small: !icon ? "px-1.5 py-1" : "p-1.5",
-        big: !icon ? "px-1.5 py-1" : "p-1",
+  const button = cva(
+    ["rounded-md inline-flex items-center gap-x-1 cursor-pointer", className],
+    {
+      variants: {
+        variant: {
+          primary: "border border-red-400",
+          secondary: "hover:bg-red-300",
+        },
+        size: {
+          small: !icon ? "px-2 py-1" : "p-1.5",
+          big: !icon ? "px-1.5 py-1" : "p-1",
+        },
       },
     },
-  });
+  );
 </script>
 
 <button

@@ -7,8 +7,9 @@ Modifiers are denoted with the `<# ... #>` syntax, directly borrowed from PowerS
 Built-in modifiers:
 - `<# prose continue #>`
 - `<# cue pause #>`
+- More to come
 
-## Types of Modifiers
+## Types
 
 Built-in modifiers start with `prose` and `cue`. Custom modifiers are aliased to whatever, as long as it doesn't include whitespaces
 
@@ -24,12 +25,7 @@ Output on writing mode:
 
 Output on msg/chat message/roleplay mode:
 
-
 > There's no way that's real. *Kinter pauses* How is *that* possible?
-
-```
-There's no way that's real. *Kinter pauses* How is *that* possible?
-```
 
 Output JSON:
 ```json

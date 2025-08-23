@@ -1,20 +1,13 @@
 <script lang="ts">
-	import Navbar from "$lib/components/Navbar.svelte";
-	import { onMount } from "svelte";
 	import "../app.css";
+	import { onMount } from "svelte";
 
 	import interFont from "@fontsource/inter/files/inter-latin-400-normal.woff2?url";
 	import interFont700 from "@fontsource/inter/files/inter-latin-700-normal.woff2?url";
 
 	const { children } = $props();
 
-	onMount(() => {
-		if (!window?.indexedDB) {
-			console.error(
-				"It seems that your browser doesn't support IndexedDB. Falling back to localStorage, albeit, it may be limited.",
-			);
-		}
-	});
+	onMount(() => {});
 </script>
 
 <svelte:head>

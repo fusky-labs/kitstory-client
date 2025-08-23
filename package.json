@@ -7,7 +7,7 @@
   "license": "Apache-2.0",
   "type": "module",
   "scripts": {
-    "preinstall": "npx only-allow",
+    "preinstall": "npx only-allow pnpm",
     "dev": "pnpm --filter=@fusky-labs/kitstory-web dev"
   },
   "devDependencies": {
