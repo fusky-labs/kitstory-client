@@ -1,48 +1,105 @@
-<script>
-  import "../styles.css";
-  import "@fontsource/azeret-mono";
+<script lang="ts">
+import "../styles.css"
+import "@fontsource/azeret-mono"
 
-  import { getCurrentWindow } from "@tauri-apps/api/window";
+import { getCurrentWindow } from "@tauri-apps/api/window"
+import { message } from "@tauri-apps/plugin-dialog"
 
-  import {
-    SquareIcon as MaxIcon,
-    MinusIcon as MiniIcon,
-    CopyIcon as RestoreIcon,
-    XIcon as CloseIcon,
-  } from "@lucide/svelte";
+import {
+	SquareIcon as MaxIcon,
+	MinusIcon as MiniIcon,
+	CopyIcon as RestoreIcon,
+	XIcon as CloseIcon,
+	ChevronDown,
+	BellIcon,
+} from "@lucide/svelte"
+import { onMount } from "svelte"
 
-  const { children } = $props();
+const { children } = $props()
+
+let closeButton: HTMLButtonElement
+let restoreButton: HTMLButtonElement
+let maximizeButton: HTMLButtonElement
+let minmizeButton: HTMLButtonElement
+
+onMount(() => {
+	const w = getCurrentWindow()
+
+	w.onResized((e) => {
+		console.log("resized", e)
+	})
+
+	closeButton.addEventListener("click", () => {
+		// TODO add a confirmation system modal if there are unsaved changes
+		w.close()
+	})
+	restoreButton.addEventListener("click", () => {
+		w.unmaximize()
+	})
+	maximizeButton.addEventListener("click", () => {
+		w.maximize()
+	})
+	minmizeButton.addEventListener("click", () => {
+		w.minimize()
+	})
+})
+
+const LOCAL_MODE_LABEL = "Kitstory is on local mode; any changes won't be synced automatically, workspaces are saved from your computer, but you may choose to sync them manually if you wish."
 </script>
 
 <div id="window-wrapper" class="grid grid-rows-[auto_1fr] h-[100dvh]">
-  <div id="title-bar" class="h-9 flex items-center gap-x-0.5 overflow-hidden">
-    <div class="relative select-none flex-1 text-sm flex items-center">
-      <span data-tauri-drag-region="" class="z-50 absolute inset-0"></span>
-      <div class="size-9 bg-purple-500"></div>
-      <span class="px-2.5">Titlebar</span>
+  <div id="title-bar" class="h-10 flex items-center gap-x-0.5 overflow-hidden">
+    <div class="pl-3.5 h-full relative select-none shrink-0 flex items-center gap-x-2">
+      <span>Kitstory</span>
+      <div class="text-xs px-1.5 py-0.5 bg-red-600 rounded-md">DEV</div>
+      <nav id="breadcrumbs">
+        <button>Home</button>
+      </nav>
     </div>
+    <div data-tauri-drag-region class="h-full relative select-none flex-1">
+    </div>
+    <!-- Right content -->
+    <button class="mx-2 rounded-md text-sm px-2 py-1 bg-neutral-600 uppercase hover:bg-neutral-500/40"
+    
+    onclick={() => message(LOCAL_MODE_LABEL, {title: "Kitstory: Local Mode Enabled" })}
+    >Local Only</button>
     <button
-      class="py-1.5 h-full w-11 grid place-items-center cursor-pointer hover:bg-blue-500/75"
+      class="py-1.5 h-full w-11 grid place-items-center cursor-pointer hover:bg-neutral-500/40"
+    >
+      <BellIcon size={19} />
+    </button>
+    <button
+      class="py-1.5 h-full w-11 grid place-items-center cursor-pointer hover:bg-neutral-500/40 group"
+      aria-label="Avatar"
+    >
+      <div class="bg-blue-400/20 size-6 rounded-full border-1 border-transparent group-hover:border-amber-50"></div>
+    </button>
+    <!-- Window controls -->
+    <hr class="h-5 border-l mx-1" />
+    <button
+      bind:this={minmizeButton}
+      class="py-1.5 h-full w-11 grid place-items-center cursor-pointer hover:bg-blue-400/75"
     >
       <MiniIcon size={19} />
     </button>
     <button
-      class="py-1.5 h-full w-11 grid place-items-center cursor-pointer hover:bg-blue-500/75"
+      bind:this={restoreButton}
+      class="hidden py-1.5 h-full w-11 place-items-center cursor-pointer hover:bg-blue-500/75"
     >
       <RestoreIcon size={16} />
     </button>
     <button
+      bind:this={maximizeButton}
       class="py-1.5 h-full w-11 grid place-items-center cursor-pointer hover:bg-blue-500/75"
     >
       <MaxIcon size={14} />
     </button>
     <button
+      bind:this={closeButton}
       class="py-1.5 h-full w-11 grid place-items-center cursor-pointer hover:bg-red-500/75"
     >
       <CloseIcon size={20} />
     </button>
   </div>
-  <div id="container">
-    {@render children()}
-  </div>
+  {@render children()}
 </div>
