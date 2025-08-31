@@ -7,6 +7,7 @@
     MinusIcon as MiniIcon,
     CopyIcon as RestoreIcon,
     XIcon as CloseIcon,
+    MenuIcon,
   } from "@lucide/svelte";
 
   interface Props {
@@ -50,7 +51,8 @@
     <div
       class="pl-3.5 h-full relative select-none shrink-0 flex items-center gap-x-2"
     >
-      <span>Kitstory</span>
+      <MenuIcon size={18} />
+      <span class="font-semibold ml-1">Kitstory</span>
       <div class="text-xs px-1.5 py-0.5 bg-red-600 rounded-md">DEV</div>
       <nav id="breadcrumbs">
         {@render breadcrumbs()}

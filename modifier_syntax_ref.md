@@ -1,64 +1,72 @@
 # What da hail are modifiers?
 
-Modifiers are special blocks that allow a certain type of medium to be formatted in a specific way; think LaTeX for writing literatures and script writing
+Extending the Markdown syntax, modifiers are special inline blocks that allow a certain type of medium to be formatted in a specific way; think LaTeX for writing literatures and script writing.
 
-Modifiers are denoted with the `<# ... #>` syntax, directly borrowed from PowerShell scripting language - which allows you to have a multi-line comment, but modifiers on Kitstory doesn't allow such thing
+Modifiers are denoted with the `<# ... #>` syntax, directly borrowed from PowerShell scripting language - which allows you to have a multi-line comment. In Kitstory, they act differently and is mainly used as a narrative or expression marker in a single character block.
+
 
 Built-in modifiers:
-- `<# prose continue #>`
-- `<# cue pause #>`
-- More to come
 
-## Types
-
-Built-in modifiers start with `prose` and `cue`. Custom modifiers are aliased to whatever, as long as it doesn't include whitespaces
+- `<# continue #>` / `<# pause #>`
+- `<# whisper #>`
+- `<# think #>`
+- `<# shout #>` / `<# yell #>`
 
 ## Example
 
 ```
-There's no way that's real.<# prose continue #>How is *that* possible?
+There's no way that's real.<# pause #>How is *that* possible?
 ```
 
-Output on writing mode:
+Output on writing/literature mode:
 
-> "There's no way that's real." Kinter continues, "How is <em>that</em> possible?"
+> "There's no way that's real." Kinter continues, "How is \<em\>that\</em\> possible?"
 
 Output on msg/chat message/roleplay mode:
 
 > There's no way that's real. *Kinter pauses* How is *that* possible?
 
-Output JSON:
+Output JSON response:
+
 ```json
 {
-  "character": "Kinter",
   "id": "57dc1b5a-8ea3-4325-9ef6-9e85d8cb6138",
   "block_type": "character",
+  "character": {
+    "name": "Kinter",
+    "full_name": "Kinter Wolfe Atwood",
+    "details": "https://kitstory.dev/v1/backstage/{{workspace_id}}/character/kinter"
+  },
   "text_parsed": "There's no way that's real. How is that possible?",
-  "text_raw": "There's no way that's real.<#prose continue#>How is that possible?",
+  "text_raw": "There's no way that's real.<# continue #>How is that possible?",
   "text_nodes": [
     {
-      "node_type": "plain_text",
+      "node_type": "text",
       "text": "There's no way that's real.",
       "format": [],
     },
     {
       "node_type": "modifier",
-      "modifier_type": "prose",
-      "modifier_syntax": "%name|pronoun% continues",
+      "modifier": "continue",
+      "syntax": { 
+        "literature": "Kinter continues",
+        "chat": "*Kinter pauses*",
+        "screenplay": "(continuing)",
+      },
       "terminators": [",", "."]
-    }
+    },
     {
-      "node_type": "plain_text"
+      "node_type": "text"
       "text": "How is ",
       "format": [],
     },
     {
-      "node_type": "plain_text"
+      "node_type": "text"
       "text": "that",
       "format": ["italic"],
     },
     {
-      "node_type": "plain_text"
+      "node_type": "text"
       "text": " possible?",
       "format": [],
     },
