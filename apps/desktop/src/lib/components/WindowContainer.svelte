@@ -8,6 +8,11 @@
     CopyIcon as RestoreIcon,
     XIcon as CloseIcon,
     MenuIcon,
+    PanelLeftClose,
+    PanelLeftOpen,
+    PanelLeft,
+    PanelRight,
+    PanelLeftDashed,
   } from "@lucide/svelte";
 
   interface Props {
@@ -46,14 +51,32 @@
   });
 </script>
 
-<div id="window-wrapper" class="grid grid-rows-[auto_1fr] h-[100dvh]">
+<div
+  id="window-wrapper"
+  class="grid grid-rows-[auto_1fr] h-[100dvh] overflow-hidden"
+>
   <div id="title-bar" class="h-10 flex items-center gap-x-0.5 overflow-hidden">
     <div
-      class="pl-3.5 h-full relative select-none shrink-0 flex items-center gap-x-2"
+      class="h-full relative select-none shrink-0 flex items-center gap-x-2"
     >
-      <MenuIcon size={18} />
-      <span class="font-semibold ml-1">Kitstory</span>
-      <div class="text-xs px-1.5 py-0.5 bg-red-600 rounded-md">DEV</div>
+      <div class="inline-flex items-center">
+        <button
+          class="p-2 h-full inline-flex items-center cursor-pointer hover:bg-neutral-500/40 rounded-md"
+        >
+          <span class="font-semibold ml-1">Kitstory</span>
+          <div
+            class="ml-1 inline-block text-xs px-1.5 py-0.5 bg-red-600 rounded-md"
+          >
+            Dev Build
+          </div>
+        </button>
+        <button
+          class="p-2 h-full place-items-center cursor-pointer hover:bg-neutral-500/40 rounded-md"
+        >
+          <PanelLeftDashed size={18} />
+        </button>
+      </div>
+      <hr class="h-5 border-l mx-1" />
       <nav id="breadcrumbs">
         {@render breadcrumbs()}
         <!-- <button>Home</button> -->
