@@ -2,6 +2,7 @@
   import { ChevronDownIcon } from "@lucide/svelte";
   import MenuItem from "./MenuItem.svelte";
   import type { SharedProps } from "./MenuItem.shared";
+  import { Collapser } from "./templates";
 
   interface Props extends SharedProps {
     label: string;
@@ -19,19 +20,28 @@
   }: Props = $props();
 
   let isOpen = $state(isCollapsed ?? false);
+
+  const toggleState = () => {
+    isOpen = !isOpen;
+  };
 </script>
 
-<div id="menu-item-group-container" class="contents">
-  <MenuItem {icon} {disabled} {active}>
-    {label}
-    {#snippet rightSlot()}
-      {@render rootRightSlot?.()}
-      <button class="p-2 cursor-pointer opacity-60 hover:opacity-100">
-        <ChevronDownIcon size={19} />
-      </button>
-    {/snippet}
-  </MenuItem>
+<Collapser id="menu-item-group" state={isOpen}>
+  {#snippet heading()}
+    <MenuItem {icon} {disabled} {active}>
+      {label}
+      {#snippet rightSlot()}
+        {@render rootRightSlot?.()}
+        <button
+          class="p-2 cursor-pointer opacity-60 hover:opacity-100"
+          onclick={toggleState}
+        >
+          <ChevronDownIcon size={19} class={isOpen ? "rotate-180" : null} />
+        </button>
+      {/snippet}
+    </MenuItem>
+  {/snippet}
   <div class="ml-5">
     {@render children?.()}
   </div>
-</div>
+</Collapser>

@@ -16,7 +16,8 @@
         "width": 1200,
         "height": 700,
         "decorations": false,
-        "devtools": true
+        "devtools": true,
+        "zoomHotkeysEnabled": true
       }
     ],
     "security": {

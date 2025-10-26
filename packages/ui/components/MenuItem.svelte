@@ -18,7 +18,7 @@
 <svelte:element
   this={as ?? "div"}
   id="menu-item"
-  class="flex items-center group hover:bg-neutral-800/50 rounded-md"
+  class="flex items-center group hover:bg-neutral-800/60 duration-150 transition-color rounded-md"
 >
   <a
     href="#"
@@ -31,9 +31,5 @@
       </span>
     {/if}
   </a>
-  {#if rightSlot}
-    <div id="__right-slot" class="contents">
-      {@render rightSlot()}
-    </div>
-  {/if}
+  {@render rightSlot?.()}
 </svelte:element>
